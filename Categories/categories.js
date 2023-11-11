@@ -25,7 +25,7 @@ new Vue({
                     type: 'POST',
                 },
                 columns: [
-                    {data: 'id'},
+                    // {data: 'id'},
                     {data: 'name'},
                     {data: 'status'},
                     {
