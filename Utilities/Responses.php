@@ -180,4 +180,27 @@ class Responses
         exit();
     }
 
+    /**
+     * @throws JsonException
+     */
+    public function failedOperation(Exception $ex): void
+    {
+        $response["message"] = $ex->getMessage();
+        $response["stackTrace"] = $ex->getTraceAsString();
+        $response["statusCode"] = $ex->getCode();
+        $response["success"] = false;
+        $response["status"] = "warning";
+        $response["data"] = null;
+        echo json_encode($response, JSON_THROW_ON_ERROR);
+        exit();
+    }
+    /**
+     * @throws JsonException
+     */
+    public function dataTableResponse(array $response, DatatablesResponse $dataTable): void
+    {
+        echo json_encode($dataTable, JSON_THROW_ON_ERROR);
+        exit();
+    }
+
 }

@@ -1,11 +1,5 @@
-// your-vue-app.js
+// vue-app.js
 
-// Mock data for demonstration
-const data = [
-    {id: 1, name: 'Category 1', status: 'Active'},
-    {id: 2, name: 'Category 2', status: 'Inactive'},
-    // Add more data as needed
-];
 
 new Vue({
     el: '#app',
@@ -33,9 +27,9 @@ new Vue({
                         render: function (data, type, row) {
                             // Action buttons
                             return `
-                                <button @click="edit(${row.id})">Edit</button>
-                                <button @click="delete(${row.id})">Delete</button>
-                                <button @click="activate(${row.id})">${row.status === 'Active' ? 'Deactivate' : 'Activate'}</button>
+                                <button class="btn btn-success" @click="edit(${row.id})">Edit</button>
+                                <button class="btn btn-danger" @click="delete(${row.id})">Delete</button>
+                                <button class="btn btn-info" @click="activate(${row.id})">${row.status === 'Active' ? 'Deactivate' : 'Activate'}</button>
                             `;
                         },
                     },

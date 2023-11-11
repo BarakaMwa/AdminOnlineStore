@@ -26,7 +26,7 @@
     <table id="categories-table" class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
-            <!--            <th>Id</th>-->
+<!--            <th>Id</th>-->
             <th>Name</th>
             <th>Status</th>
             <th>Actions</th>

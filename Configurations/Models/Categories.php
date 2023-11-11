@@ -19,7 +19,27 @@ class Categories
      */
     public function getGetAll(): string
     {
-        return "SELECT * FROM ".$this->table;
+        return "SELECT * FROM " . $this->table;
+    }
+
+    /**
+     * @param $sql
+     * @param $search
+     * @return string
+     */
+    public function searchBy($sql, $search): string
+    {
+        return $sql . " Where name LIKE '%" . $search['value'] . "%' OR status LIKE '%" . $search['value'] . "%'";
+    }
+
+    /**
+     * @param $start
+     * @param $length
+     * @return string
+     */
+    public function getPage(string $sql, $start, $length): string
+    {
+        return $sql. " LIMIT ".$start.", ".$length;
     }
 
 
