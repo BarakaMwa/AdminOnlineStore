@@ -1,5 +1,6 @@
 <?php
 
+//namespace Admin\Models;
 
 class Categories
 {
@@ -23,21 +24,22 @@ class Categories
     }
 
     /**
-     * @param $sql
-     * @param $search
+     * @param string $sql
+     * @param array $search
      * @return string
      */
-    public function searchBy($sql, $search): string
+    public function searchBy(string $sql, array $search): string
     {
         return $sql . " Where name LIKE '%" . $search['value'] . "%' OR status LIKE '%" . $search['value'] . "%'";
     }
 
     /**
-     * @param $start
-     * @param $length
+     * @param string $sql
+     * @param string $start
+     * @param string $length
      * @return string
      */
-    public function getPage(string $sql, $start, $length): string
+    public function getPage(string $sql, string $start, string $length): string
     {
         return $sql. " LIMIT ".$start.", ".$length;
     }

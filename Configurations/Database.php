@@ -7,7 +7,7 @@ class Database
 
 //    private $host = "infyenterprise.com";
     private $host = "localhost:3306";
-    private $db_name = "u818699652_online_store";
+    private $dbName = "u818699652_online_store";
     private $username = "u818699652_online_store";
     private $password = "bDPPQuJ1UoKfl3f9SzIvSXOT8uNRE0Vy";
     public $conn;
@@ -27,7 +27,9 @@ class Database
 
         $this->conn = null;
         try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn = new PDO("mysql:host=" . $this->host .
+                ";dbname=" . $this->dbName,
+                $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $exception) {
             echo "Connection error: " . $exception->getMessage();

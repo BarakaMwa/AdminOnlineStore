@@ -19,14 +19,21 @@
     <!--    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.js"></script>-->
     <script type="text/javascript" charset="utf8" src="../assets/datatables/jquery.dataTables.min.js"></script>
     <script type="text/javascript" charset="utf8" src="../assets/datatables/dataTables.bootstrap4.min.js"></script>
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">-->
+    <link rel="stylesheet" href="../assets/sweet-alerts/sweet-alert.css">
+    <!--    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
+    <script src="../assets/sweet-alerts/sweet-alert.min.js"></script>
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 </head>
 <body>
 
 <div id="app" class="container mt-5">
+    <button class="btn-primary btn" v-on:click="addNew()">Add New</button>
     <table id="categories-table" class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
-<!--            <th>Id</th>-->
+            <!--            <th>Id</th>-->
             <th>Name</th>
             <th>Status</th>
             <th>Actions</th>
@@ -38,6 +45,7 @@
     </table>
 </div>
 
-<script src="categories.js"></script>
+<script src="categories-vue-table.js"></script>
+<script src="categories-button-table.js"></script>
 </body>
 </html>

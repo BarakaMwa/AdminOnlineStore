@@ -20,8 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = $categories->getGetAll();
-        $sql = $categories->searchBy($sql,$_POST['search']);
-        $sql = $categories->getPage($sql,$_POST['start'], $_POST['length']);
+
+        $data = $database->runSelectAllQuery($sql, $db);
+
+        $countAll = count($data);
+        if ($_POST['search'] != null && $_POST['search']['value'] != "") {
+            $sql = $categories->searchBy($sql, $_POST['search']);
+        }
+        $sql = $categories->getPage($sql, $_POST['start'], $_POST['length']);
 
         $data = $database->runSelectAllQuery($sql, $db);
 
@@ -34,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $dataTable->data = $data;
         $dataTable->draw = $_POST['draw'];
-        $dataTable->recordsTotal = count($data);
+        $dataTable->recordsTotal = $countAll;
         $dataTable->recordsFiltered = count($data);
 
         $responses->dataTableResponse($response, $dataTable);

@@ -7,5 +7,9 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="vue" level="application" />
     <orderEntry type="library" name="jquery-3.6.4" level="application" />
+    <orderEntry type="library" name="sweetalert2" level="application" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="10ae7794-c93e-408e-a9e8-5818c31587b3" />
   </component>
 </module>
